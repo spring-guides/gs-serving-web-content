@@ -266,7 +266,7 @@ This change demonstrates that the [`@RequestParam`] arrangement in `GreetingCont
 Summary
 -------
 
-Congratulations! You have just developed a simple web page that detects the type of device being used by the client.
+Congratulations! You have just developed a web page using Spring.
 
 
 [u-war]: /understanding/war
