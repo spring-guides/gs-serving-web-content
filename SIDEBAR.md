@@ -1,13 +1,18 @@
-### Related Resources
+## Related resources
 
-There's more to building web content than is covered here. You can continue your exploration of Spring and REST with the following resources.
+There's more to building web content than what is covered here. You can continue to explore Spring and REST with the following resources.
 
-### Getting Started Guides
+### Getting Started guides
 
 * [Building a RESTful Web Service][gs-rest-service]
 * [Consuming a RESTful Web Service][gs-consuming-rest]
 * [Building a Hypermedia-Driven REST Web Service][gs-rest-hateoas]
 * [Building a RESTful Web Service with Spring Bootstrap Actuator][gs-actuator-service]
+
+[gs-rest-service]: /guides/gs/rest-service/content
+[gs-consuming-rest-android]: /guides/gs/consuming-rest-android/content
+[gs-rest-hateoas]: /guides/gs/rest-hateoas/content
+[gs-actuator-service]: /guides/gs/actuator-service/content
 
 ### Tutorials
 
@@ -15,7 +20,7 @@ There's more to building web content than is covered here. You can continue your
 
 [tut-tbd]: /guides/tutorials/tbd
 
-### Understanding
+### Concepts and technologies
 
 * [REST][u-rest]
 * [JSON][u-json]
