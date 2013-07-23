@@ -52,7 +52,7 @@ Set up the project
 Create a web controller
 -----------------------
 
-In Spring's approach to building web sites, HTTP requests are handled by a controller. You can easily identify these requests by the [`@Controller`] annotation. In the following example, the GreetingController handles GET requests for /greeting by returning the name of a [`View`]:
+In Spring's approach to building web sites, HTTP requests are handled by a controller. You can easily identify these requests by the [`@Controller`] annotation. In the following example, the GreetingController handles GET requests for /greeting by returning the name of a [`View`], in this case, "greeting". A `View` is responsible for rendering the HTML content:
 
     <@snippet path="src/main/java/hello/GreetingController.java" prefix="complete"/>
 
