@@ -5,7 +5,7 @@
 What you'll build
 -----------------
 
-This guide walks you through creating a "hello world" web site with Spring. The service will accept HTTP GET requests at:
+This guide walks you through the process of creating a "hello world" web site with Spring. The service will accept HTTP GET requests at:
 
     http://localhost:8080/greeting
 
@@ -37,7 +37,7 @@ What you'll need
 How to complete this guide
 --------------------------
 
-Like all Spring's [Getting Started guides](/getting-started), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
+Like all Spring's [Getting Started guides](/guides/gs), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
 
 To **start from scratch**, move on to [Set up the project](#scratch).
 
@@ -45,7 +45,7 @@ To **skip the basics**, do the following:
 
  - [Download][zip] and unzip the source repository for this guide, or clone it using [git](/understanding/git):
 `git clone https://github.com/springframework-meta/gs-serving-web-content.git`
- - cd into `gs-serving-web-content/initial`
+ - cd into `gs-serving-web-content/initial`.
  - Jump ahead to [Create a web controller](#initial).
 
 **When you're finished**, you can check your results against the code in `gs-serving-web-content/complete`.
@@ -56,7 +56,7 @@ To **skip the basics**, do the following:
 Set up the project
 ------------------
 
-First you set up a basic build script. You can use any build system you like when building apps with Spring, but the code you need to work with [Maven](https://maven.apache.org) and [Gradle](http://gradle.org) is included here. If you're not familiar with either, refer to [Building Java Projects with Maven](../gs-maven/README.md) or [Building Java Projects with Gradle](../gs-gradle/README.md).
+First you set up a basic build script. You can use any build system you like when building apps with Spring, but the code you need to work with [Maven](https://maven.apache.org) and [Gradle](http://gradle.org) is included here. If you're not familiar with either, refer to [Building Java Projects with Maven](/guides/gs/maven/content) or [Building Java Projects with Gradle](/guides/gs/gradle/content).
 
 ### Create the directory structure
 
@@ -124,7 +124,7 @@ Note to experienced Maven users who are unaccustomed to using an external parent
 Create a web controller
 -----------------------
 
-In Spring's approach to building web sites, HTTP requests are handled by a controller. These components are easily identified by the [`@Controller`] annotation, and the GreetingController below handles GET requests for /greeting by returning the name of a [`View`]:
+In Spring's approach to building web sites, HTTP requests are handled by a controller. You can easily identify these requests by the [`@Controller`] annotation. In the following example, the GreetingController handles GET requests for /greeting by returning the name of a [`View`]:
 
 `src/main/java/hello/GreetingController.java`
 ```java
@@ -147,15 +147,15 @@ public class GreetingController {
 }
 ```
 
-This controller is concise and simple, but there's plenty going on under the hood. Let's break it down step by step.
+This controller is concise and simple, but there's plenty going on. Let's break it down step by step.
 
 The `@RequestMapping` annotation ensures that HTTP requests to `/greeting` are mapped to the `greeting()` method.
 
 > **Note:** The above example does not specify `GET` vs. `PUT`, `POST`, and so forth, because `@RequestMapping` maps all HTTP operations by default. Use `@RequestMapping(method=GET)` to narrow this mapping.
 
-[`@RequestParam`] binds the value of the query string parameter `name` into the `name` parameter of the `greeting()` method. This query string parameter is not `required`; if it is absent in the request, the `defaultValue` of "World" is used. The value of the `name` parameter is added to a [`Model`] object, ultimately making it accessible to the view template.
+[`@RequestParam`] binds the value of the query String parameter `name` into the `name` parameter of the `greeting()` method. This query String parameter is not `required`; if it is absent in the request, the `defaultValue` of "World" is used. The value of the `name` parameter is added to a [`Model`] object, ultimately making it accessible to the view template.
 
-The implementation of the method body is relying on a view technology, in this case [Thymeleaf][u-thymeleaf], to perform server-side rendering of the HTML. Thymeleaf parses the `greeting.html` template below and evaluates the `th:text` expression to render the value of the `${name}` parameter that was set in the controller.
+The implementation of the method body relies on a view technology, in this case [Thymeleaf][u-thymeleaf], to perform server-side rendering of the HTML. Thymeleaf parses the `greeting.html` template below and evaluates the `th:text` expression to render the value of the `${name}` parameter that was set in the controller.
 
 `src/main/resources/templates/greeting.html`
 ```html
