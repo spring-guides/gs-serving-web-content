@@ -1,5 +1,5 @@
 
-# Getting Started: Serving Web Content
+# Serving Web Content
 
 
 What you'll build
@@ -232,7 +232,9 @@ The [Spring Package maven plugin][spring-package-maven-plugin] collects all the 
 
 Now run the following to produce a single executable JAR file containing all necessary dependency classes and resources:
 
-    mvn package
+```sh
+$ mvn package
+```
 
 [spring-package-maven-plugin]: https://github.com/SpringSource/spring-zero/tree/master/spring-package-maven-plugin
 
@@ -242,8 +244,9 @@ Run the service
 -------------------
 Run your service with `java -jar` at the command line:
 
-    java -jar target/gs-serving-web-content-0.1.0.jar
-
+```sh
+$ java -jar target/gs-serving-web-content-0.1.0.jar
+```
 
 
 Logging output is displayed. The service should be up and running within a few seconds.
