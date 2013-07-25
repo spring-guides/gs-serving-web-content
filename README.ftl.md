@@ -1,6 +1,6 @@
 <#assign project_id="gs-serving-web-content">
 
-# Getting Started: Serving Web Content
+# Serving Web Content
 
 
 What you'll build
