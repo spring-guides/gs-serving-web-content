@@ -1,7 +1,4 @@
 
-# Serving Web Content
-
-
 What you'll build
 -----------------
 
