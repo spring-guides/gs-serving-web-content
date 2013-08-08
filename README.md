@@ -78,15 +78,15 @@ In a project directory of your choosing, create the following subdirectory struc
     <version>0.1.0</version>
 
     <parent>
-        <groupId>org.springframework.bootstrap</groupId>
-        <artifactId>spring-bootstrap-starters</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
         <version>0.5.0.BUILD-SNAPSHOT</version>
     </parent>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.bootstrap</groupId>
-            <artifactId>spring-bootstrap-web-starter</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.thymeleaf</groupId>
@@ -94,25 +94,26 @@ In a project directory of your choosing, create the following subdirectory struc
         </dependency>
     </dependencies>
 
-    <!-- TODO: remove once bootstrap goes GA -->
     <repositories>
         <repository>
             <id>spring-snapshots</id>
-            <url>http://repo.springsource.org/snapshot</url>
+            <url>http://repo.springsource.org/libs-snapshot</url>
             <snapshots><enabled>true</enabled></snapshots>
         </repository>
     </repositories>
+
     <pluginRepositories>
         <pluginRepository>
             <id>spring-snapshots</id>
-            <url>http://repo.springsource.org/snapshot</url>
+            <url>http://repo.springsource.org/libs-snapshot</url>
             <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
     </pluginRepositories>
+
 </project>
 ```
 
-TODO: mention that we're using Spring Bootstrap's [_starter POMs_](../gs-bootstrap-starter) here.
+This guide is using [Spring Boot's starter POMs](/guides/gs/spring-boot/content).
 
 Note to experienced Maven users who are unaccustomed to using an external parent project: you can take it out later, it's just there to reduce the amount of code you have to write to get started.
 
@@ -180,8 +181,8 @@ Although it is possible to package this service as a traditional [WAR][u-war] fi
 ```java
 package hello;
 
-import org.springframework.bootstrap.SpringApplication;
-import org.springframework.bootstrap.context.annotation.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan
@@ -216,24 +217,24 @@ Add the following configuration to your existing Maven POM:
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.zero</groupId>
-                <artifactId>spring-package-maven-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
 ```
 
-The `start-class` property tells Maven to create a `META-INF/MANIFEST.MF` file with a `Main-Class: hello.Application` entry. This entry enables you to run the jar with `java -jar`.
+The `start-class` property tells Maven to create a `META-INF/MANIFEST.MF` file with a `Main-Class: hello.Application` entry. This entry enables you to run it with `mvn spring-boot:run` (or simply run the jar itself with `java -jar`).
 
-The [Spring Package maven plugin][spring-package-maven-plugin] collects all the jars on the classpath and builds a single "über-jar", which makes it more convenient to execute and transport your service.
+The [Spring Boot maven plugin][spring-boot-maven-plugin] collects all the jars on the classpath and builds a single "über-jar", which makes it more convenient to execute and transport your service.
 
-Now run the following to produce a single executable JAR file containing all necessary dependency classes and resources:
+Now run the following command to produce a single executable JAR file containing all necessary dependency classes and resources:
 
 ```sh
 $ mvn package
 ```
 
-[spring-package-maven-plugin]: https://github.com/SpringSource/spring-zero/tree/master/spring-package-maven-plugin
+[spring-boot-maven-plugin]: https://github.com/SpringSource/spring-boot/tree/master/spring-boot-maven-plugin
 
 > **Note:** The procedure above will create a runnable JAR. You can also opt to [build a classic WAR file](/guides/gs/convert-jar-to-war/content) instead.
 
