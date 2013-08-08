@@ -9,10 +9,10 @@ There's more to building web content than what is covered here. You can continue
 * [Building a Hypermedia-Driven REST Web Service][gs-rest-hateoas]
 * [Building a RESTful Web Service with Spring Bootstrap Actuator][gs-actuator-service]
 
-[gs-rest-service]: /guides/gs/rest-service/content
-[gs-consuming-rest]: /guides/gs/consuming-rest/content
-[gs-rest-hateoas]: /guides/gs/rest-hateoas/content
-[gs-actuator-service]: /guides/gs/actuator-service/content
+[gs-rest-service]: /guides/gs/rest-service/
+[gs-consuming-rest]: /guides/gs/consuming-rest/
+[gs-rest-hateoas]: /guides/gs/rest-hateoas/
+[gs-actuator-service]: /guides/gs/actuator-service/
 
 ### Tutorials
 
