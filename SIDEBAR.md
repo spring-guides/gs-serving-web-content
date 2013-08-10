@@ -25,6 +25,6 @@ There's more to building web content than what is covered here. You can continue
 * [REST][u-rest]
 * [JSON][u-json]
 
-[u-rest]: /understanding/rest
-[u-json]: /understanding/json
+[u-rest]: /understanding/REST
+[u-json]: /understanding/JSON
  
