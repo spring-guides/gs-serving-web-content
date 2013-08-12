@@ -22,9 +22,11 @@ There's more to building web content than what is covered here. You can continue
 
 ### Concepts and technologies
 
+* [View Templates][u-view-templates]
 * [REST][u-rest]
 * [JSON][u-json]
 
+[u-view-templates]: /understanding/view-templates
 [u-rest]: /understanding/REST
 [u-json]: /understanding/JSON
  

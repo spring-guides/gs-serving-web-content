@@ -153,7 +153,7 @@ The `@RequestMapping` annotation ensures that HTTP requests to `/greeting` are m
 
 [`@RequestParam`] binds the value of the query String parameter `name` into the `name` parameter of the `greeting()` method. This query String parameter is not `required`; if it is absent in the request, the `defaultValue` of "World" is used. The value of the `name` parameter is added to a [`Model`] object, ultimately making it accessible to the view template.
 
-The implementation of the method body relies on a view technology, in this case [Thymeleaf][u-thymeleaf], to perform server-side rendering of the HTML. Thymeleaf parses the `greeting.html` template below and evaluates the `th:text` expression to render the value of the `${name}` parameter that was set in the controller.
+The implementation of the method body relies on a [view technology][u-view-templates], in this case [Thymeleaf](http://www.thymeleaf.org/doc/html/Thymeleaf-Spring3.html), to perform server-side rendering of the HTML. Thymeleaf parses the `greeting.html` template below and evaluates the `th:text` expression to render the value of the `${name}` parameter that was set in the controller.
 
 `src/main/resources/templates/greeting.html`
 ```html
@@ -273,7 +273,7 @@ Congratulations! You have just developed a web page using Spring.
 [u-war]: /understanding/WAR
 [u-tomcat]: /understanding/Tomcat
 [u-application-context]: /understanding/application-context
-[u-thymeleaf]: /understanding/Thymeleaf
+[u-view-templates]: /understanding/view-templates
 [`View`]: http://static.springsource.org/spring/docs/current/javadoc-api/org/springframework/web/servlet/View.html
 [`Model`]: http://static.springsource.org/spring/docs/current/javadoc-api/org/springframework/ui/Model.html
 [`@Configuration`]:http://static.springsource.org/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html
