@@ -270,10 +270,10 @@ Summary
 Congratulations! You have just developed a web page using Spring.
 
 
-[u-war]: /understanding/WAR
-[u-tomcat]: /understanding/Tomcat
-[u-application-context]: /understanding/application-context
-[u-view-templates]: /understanding/view-templates
+[u-war] /understanding/WAR
+[u-tomcat] /understanding/Tomcat
+[u-application-context] /understanding/application-context
+[u-view-templates] /understanding/view-templates
 [`View`]: http://static.springsource.org/spring/docs/current/javadoc-api/org/springframework/web/servlet/View.html
 [`Model`]: http://static.springsource.org/spring/docs/current/javadoc-api/org/springframework/ui/Model.html
 [`@Configuration`]:http://static.springsource.org/spring/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html
