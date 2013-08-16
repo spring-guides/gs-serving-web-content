@@ -38,9 +38,9 @@ Set up the project
 
 <@create_directory_structure_hello/>
 
-### Create a Maven POM
+### Create a Gradle build file
 
-    <@snippet path="pom.xml" prefix="initial"/>
+    <@snippet path="build.gradle" prefix="initial"/>
 
 <@bootstrap_starter_pom_disclaimer/>
 
@@ -83,9 +83,9 @@ The [`@EnableAutoConfiguration`][] annotation switches on reasonable default beh
 
 <@build_an_executable_jar_subhead/>
 
-<@build_an_executable_jar/>
+<@build_an_executable_jar_with_gradle/>
 
-<@run_the_application module="service"/>
+<@run_the_application_with_gradle module="service"/>
 
 Logging output is displayed. The service should be up and running within a few seconds.
 
