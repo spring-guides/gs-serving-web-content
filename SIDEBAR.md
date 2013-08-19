@@ -6,7 +6,7 @@ There's more to building web content than what is covered here. You can continue
 
 * [Building a RESTful Web Service][gs-rest-service]
 * [Consuming a RESTful Web Service][gs-consuming-rest]
-* [Building a Hypermedia-Driven REST Web Service][gs-rest-hateoas]
+* [Building a Hypermedia-Driven RESTful Web Service][gs-rest-hateoas]
 * [Building a RESTful Web Service with Spring Bootstrap Actuator][gs-actuator-service]
 
 [gs-rest-service]: /guides/gs/rest-service/

@@ -1,8 +1,9 @@
+This guide walks you through the process of creating a "hello world" web site with Spring.
 
 What you'll build
 -----------------
 
-This guide walks you through the process of creating a "hello world" web site with Spring. The service will accept HTTP GET requests at:
+You'll build a service that will accept HTTP GET requests at:
 
     http://localhost:8080/greeting
 
