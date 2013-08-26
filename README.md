@@ -262,11 +262,11 @@ Logging output is displayed. The service should be up and running within a few s
 Test the service
 ----------------
 
-Now that the web site is running, visit <http://localhost:8080/greeting>, where you see:
+Now that the web site is running, visit [http://localhost:8080/greeting](http://localhost:8080/greeting), where you see:
 
     "Hello, World!"
 
-Provide a `name` query string parameter with <http://localhost:8080/greeting?name=User>. Notice how the message changes from "Hello, World!" to "Hello, User!":
+Provide a `name` query string parameter with [http://localhost:8080/greeting?name=User](http://localhost:8080/greeting?name=User). Notice how the message changes from "Hello, World!" to "Hello, User!":
 
     "Hello, User!"
 
