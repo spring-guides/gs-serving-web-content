@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>0.5.0.M4</version>
+        <version>0.5.0.M5</version>
     </parent>
 
     <dependencies>
@@ -40,9 +40,9 @@
     <repositories>
         <repository>
             <id>spring-snapshots</id>
-            <url>http://repo.spring.io/libs-snapshot</url>
+            <url>http://repo.spring.io/libs-milestone</url>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
@@ -50,9 +50,9 @@
     <pluginRepositories>
         <pluginRepository>
             <id>spring-snapshots</id>
-            <url>http://repo.spring.io/libs-snapshot</url>
+            <url>http://repo.spring.io/libs-milestone</url>
             <snapshots>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
