@@ -77,7 +77,7 @@ Below is the [initial Gradle build file](https://github.com/spring-guides/gs-ser
 ```gradle
 buildscript {
     repositories {
-        maven { url "http://repo.spring.io/libs-snapshot" }
+        maven { url "http://repo.spring.io/libs-milestone" }
         mavenLocal()
     }
 }
@@ -93,17 +93,17 @@ jar {
 
 repositories {
     mavenCentral()
-    maven { url "http://repo.spring.io/libs-snapshot" }
+    maven { url "http://repo.spring.io/libs-milestone" }
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:0.5.0.M4")
+    compile("org.springframework.boot:spring-boot-starter-web:0.5.0.M5")
     compile("org.thymeleaf:thymeleaf-spring3:2.0.17")
     testCompile("junit:junit:4.11")
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.6'
+    gradleVersion = '1.8'
 }
 ```
     
