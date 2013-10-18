@@ -26,7 +26,7 @@
 
     <repositories>
         <repository>
-            <id>spring-snapshots</id>
+            <id>spring-milestone</id>
             <url>http://repo.spring.io/libs-milestone</url>
             <snapshots>
                 <enabled>false</enabled>
@@ -36,7 +36,7 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>spring-snapshots</id>
+            <id>spring-milestone</id>
             <url>http://repo.spring.io/libs-milestone</url>
             <snapshots>
                 <enabled>false</enabled>
