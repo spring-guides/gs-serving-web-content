@@ -10,6 +10,7 @@ There's more to building web content than what is covered here. You can continue
 * [Building a RESTful Web Service with Spring Bootstrap Actuator][gs-actuator-service]
 * [Detecting a Device][gs-device-detection]
 * [Handling Web Site Preference][gs-handling-site-preference]
+* [Serving Mobile Web Content with Spring MVC][gs-serving-mobile-web-content]
 
 [gs-rest-service]: /guides/gs/rest-service/
 [gs-consuming-rest]: /guides/gs/consuming-rest/
@@ -17,6 +18,7 @@ There's more to building web content than what is covered here. You can continue
 [gs-actuator-service]: /guides/gs/actuator-service/
 [gs-device-detection]: /guides/gs/device-detection/
 [gs-handling-site-preference]: /guides/gs/handling-site-preference/
+[gs-serving-mobile-web-content]: /guides/gs/serving-mobile-web-content
 
 ### Tutorials
 
