@@ -36,14 +36,14 @@
     <repositories>
         <repository>
             <id>spring-milestone</id>
-            <url>http://repo.spring.io/release</url>
+            <url>http://repo.spring.io/libs-release</url>
         </repository>
     </repositories>
 
     <pluginRepositories>
         <pluginRepository>
             <id>spring-milestone</id>
-            <url>http://repo.spring.io/release</url>
+            <url>http://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
 
