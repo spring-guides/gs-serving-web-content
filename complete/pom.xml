@@ -7,6 +7,12 @@
     <artifactId>gs-serving-web-content</artifactId>
     <version>0.1.0</version>
 
+    <!--
+     Produces deployable war.  Command line still works with...
+     java -jar target/gs-serving-web-content-0.1.0.war
+    -->
+    <packaging>war</packaging>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -18,14 +24,35 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        <!-- Required for WAR based deployments-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>1.7</java.version>
+
+        <!--
+            Tomcat manager username/password, the tomcat plugin will use
+            these -->
+        <tomcat.username>manager</tomcat.username>
+        <tomcat.password>manager</tomcat.password>
     </properties>
 
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
