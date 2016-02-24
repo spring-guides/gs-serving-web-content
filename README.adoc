@@ -85,6 +85,7 @@ include::complete/src/main/resources/templates/greeting.html[]
 
 A common feature of developing web apps is coding a change, restarting your app, and refreshing the browser to view the change. This entire process can eat up a lot of time. To speed up the cycle of things, Spring Boot comes with a handy module known as http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#using-boot-devtools[spring-boot-devtools].
 
+* Enable http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-hotswapping[hot swapping]
 * Switches template engines to disable caching
 * Enables LiveReload to refresh browser automatically
 * Other reasonable defaults based on development instead of production
