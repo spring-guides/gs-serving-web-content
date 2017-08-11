@@ -139,5 +139,16 @@ and when you restart the app you will see the HTML at http://localhost:8080/.
 
 Congratulations! You have just developed a web page using Spring.
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
+== See Also
 
+The following guides may also be helpful:
+
+* https://spring.io/guides/gs/spring-boot/[Building an Application with Spring Boot]
+* https://spring.io/guides/gs/accessing-data-gemfire/[Accessing Data with GemFire]
+* https://spring.io/guides/gs/accessing-data-jpa/[Accessing Data with JPA]
+* https://spring.io/guides/gs/accessing-data-mongodb/[Accessing Data with MongoDB]
+* https://spring.io/guides/gs/accessing-data-mysql/[Accessing data with MySQL]
+* https://spring.io/guides/gs/testing-web/[Testing the Web Layer]
+* https://spring.io/guides/gs/rest-service/[Building a RESTful Web Service]
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
