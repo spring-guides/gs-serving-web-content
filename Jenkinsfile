@@ -1,21 +1,17 @@
-#!/usr/bin/env groovy
+!/usr/bin/env groovy
 
 pipeline 
 {
 
     agent any
-    stages 
-   {
-      stage('Preparation'){
-	      steps {
-          git 'https://github.com/Rajdash/gs-serving-web-content.git'
-      
-         }
-		 }
+	tools {
+        maven 'apache-maven-3.3.9'
+    }
+    stages {
       stage('Build') 
       {
 	  steps {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+         sh 'mvn -Dmaven.test.failure.ignore clean package'
       }
 	  }
    stage('Results') 
@@ -25,5 +21,4 @@ pipeline
       archive 'target/*.jar'
 	  }
       }
-   }
    }
