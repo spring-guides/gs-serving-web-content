@@ -9,8 +9,7 @@ pipeline
       stage('Preparation'){
 	      steps {
           git 'https://github.com/Rajdash/gs-serving-web-content.git'
-          def mvnHome       
-          mvnHome = tool 'M3'
+      
          }
 		 }
       stage('Build') 
