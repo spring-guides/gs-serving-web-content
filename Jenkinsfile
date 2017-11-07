@@ -1,3 +1,6 @@
+#!/usr/bin/env groovy
+
+pipeline {
 node {
    def mvnHome
    stage('Preparation') 
