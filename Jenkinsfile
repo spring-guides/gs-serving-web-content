@@ -11,8 +11,7 @@ pipeline
       stage('Build') 
       {
 	  steps {
-         sh 'cd ./complete/'
-         sh 'mvn clean package'
+         sh 'mvn clean package -f /complete/pom.xml'
       }
 	  }
    stage('Results') 
