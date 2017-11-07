@@ -21,4 +21,5 @@ pipeline
       archive 'target/*.jar'
 	  }
       }
+    }
    }
