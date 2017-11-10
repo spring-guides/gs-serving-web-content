@@ -1,31 +1,29 @@
-#!/usr/bin/env groovy
-
-pipeline 
+pipeline
 {
 
     agent any
-	tools {
+        tools {
         maven 'M3'
     }
     stages {
-      stage('Build') 
+      stage('Build')
       {
-	  steps {
+          steps {
          sh 'mvn clean package -f complete/pom.xml'
       }
-	  }
-   stage('Results') 
+          }
+   stage('Results')
       {
-	  steps {
+          steps {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
-	  }
+          }
       }
-   stage('Deploy to CF'){
+   stage('Provision/Devploy application'){
       steps {
-	     sh 'cf login -a https://api.run.pivotal.io -u rajranjandash@gmail.com -p Rajranjan@123'
-		 sh 'cf push spring-web-app -p complete/target/gs-serving-web-content-0.1.0.jar'
-	  }
-	  }
+             sh 'chmod 755 provision-app.sh'
+			 sh './provision-app.sh ${BUILD_NUMBER}'
+          }
+          }
     }
    }
