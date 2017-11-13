@@ -26,7 +26,7 @@ pipeline
           version = readFile 'version.txt'
 		  jarpath = readFile 'jarpath.txt'
         }
-                    nexusPublisher nexusInstanceId: 'nexus-host', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '${jarpath}']], mavenCoordinate: [artifactId: 'gs-serving-web-content', groupId: 'org.springframework', packaging: 'jar' ,version: '${version}']]]
+                    nexusPublisher nexusInstanceId: 'nexus-host', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: ${jarpath}]], mavenCoordinate: [artifactId: 'gs-serving-web-content', groupId: 'org.springframework', packaging: 'jar' ,version: ${version}]]]
                   }
               }
 
