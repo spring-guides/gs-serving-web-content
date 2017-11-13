@@ -22,8 +22,6 @@ pipeline
         stage('Publish artifacts to Nexus')
               {
                   steps {
-				    sh 'echo `mvn -f complete/pom.xml org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version|grep -Ev '(^\[|Download\w+:)'` > version.txt'
-					sh 'echo `ls complete/target/*.jar` > jarpath.txt
 					script {
           version = readFile('version.txt')
 		  jarpath = readFile('jarpath.txt')
