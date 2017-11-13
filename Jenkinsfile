@@ -6,6 +6,13 @@ pipeline
         maven 'M3'
     }
     stages {
+      stage('Bump release version')
+      {
+          steps {
+          sh 'chmod 755 bumptonextrelease.sh'
+          sh './bumptonextrelease.sh'
+          }
+      }
       stage('Build')
       {
           steps {
