@@ -23,8 +23,10 @@ pipeline
               {
                   steps {
 					script {
-          version = readFile 'version.txt'
-		  jarpath = readFile 'jarpath.txt'
+          version = readFile('version.txt').trim()
+		  jarpath = readFile('jarpath.txt').trim()
+		  echo "${version}"
+		  echo "${jarpath}"
 						nexusPublisher nexusInstanceId: 'nexus-host', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: "${jarpath}"]], mavenCoordinate: [artifactId: 'gs-serving-web-content', groupId: 'org.springframework', packaging: 'jar' ,version: "${version}"]]]
         }
                     
@@ -48,6 +50,7 @@ pipeline
           }
    stage('Smoke Test'){
            steps {
+		        sh 'sleep 40'
                 sh 'chmod 755 Smoketest.sh'
                         sh './Smoketest.sh'
           }
