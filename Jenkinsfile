@@ -25,5 +25,12 @@ pipeline
 			 sh './provision-app.sh ${BUILD_NUMBER}'
           }
           }
+   stage('Smoke Test'){
+	   steps {
+	        sh 'chmod 755 Smoketest.sh'
+			sh './Smoketest.sh'
+          }
+        
+	}
     }
    }
