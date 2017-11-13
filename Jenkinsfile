@@ -22,7 +22,7 @@ pipeline
         stage('Publish artifacts to Nexus')
 	      {
 	          steps {
-                    currentVersion=`mvn -f complete/pom.xml org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version|grep -Ev '(^\[|Download\w+:)'`
+                  sh 'currentVersion=`mvn -f complete/pom.xml org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version|grep -Ev '(^\[|Download\w+:)'`'
 	            nexusPublisher nexusInstanceId: 'nexus-host', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'complete/target/*.jar']], mavenCoordinate: [artifactId: 'gs-serving-web-content', groupId: 'org.springframework', packaging: 'jar' , version: '${currentVersion}']]]
 	          }
 	      }
