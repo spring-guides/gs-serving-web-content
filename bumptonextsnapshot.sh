@@ -15,6 +15,7 @@ git config --global user.name "Rajdash"
 git config --global user.email rajranjandash@gmail.com
 git add complete/pom.xml
 git commit -m "bumped to next snapshot version"
-git push origin master
-#echo "The version is bumped to next release version $nextSnapshotVersion"
+git push origin HEAD:master
+#git push origin master
+echo "The version is bumped to next release version $nextSnapshotVersion"
 fi
