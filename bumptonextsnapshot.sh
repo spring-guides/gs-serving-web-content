@@ -23,5 +23,5 @@ mvn -f complete/pom.xml versions:set -DnewVersion=$nextSnapshotVersion versions:
 fi
 git config remote.origin.url "https://Rajdash:raj12345@github.com/Rajdash/gs-serving-web-content.git"
 git add complete/pom.xml
-git commit "commiting new tag"
+git commit -m "commiting new tag"
 git push origin $currentVersion-tag 
