@@ -13,6 +13,6 @@ else
 mvn -f complete/pom.xml versions:set -DnewVersion=$nextSnapshotVersion versions:commit
 git add complete/pom.xml
 git commit -m "bumped to next snapshot version"
-git push 
+git push origin master
 echo "The version is bumped to next release version $nextSnapshotVersion"
 fi
