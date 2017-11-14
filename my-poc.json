@@ -1,0 +1,18 @@
+{
+    "family": "gs-serving-web-content",
+    "containerDefinitions": [
+        {
+            "image": "rajranjan/gs-serving-web-content:v_%BUILD_NUMBER%",
+            "name": "gs-serving-web-content",
+            "cpu": 10,
+            "memory": 256,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 8181,
+                    "hostPort": 8181
+                }
+            ]
+        }
+    ]
+}
