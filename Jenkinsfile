@@ -17,6 +17,7 @@ pipeline
       {
           steps {
          sh 'mvn clean package -f complete/pom.xml'
+         sh 'echo `ls complete/target/*.jar` > jarpath.txt'
       }
           }
         stage('Publish artifacts to Nexus')
