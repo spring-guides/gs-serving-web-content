@@ -11,6 +11,8 @@ then
 echo "It is already a snapshot"
 else
 mvn -f complete/pom.xml versions:set -DnewVersion=$nextSnapshotVersion versions:commit
+git config --global user.name "Rajdash"
+git config --global user.email rajranjandash@gmail.com
 git add complete/pom.xml
 git commit -m "bumped to next snapshot version"
 git push origin master
