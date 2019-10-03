@@ -12,126 +12,181 @@
 :icons: font
 :source-highlighter: prettify
 :project_id: gs-serving-web-content
-This guide walks you through the process of creating a "hello world" web site with Spring.
 
-== What you'll build
+This guide walks you through the process of creating a "`Hello, World`" web site with
+Spring.
 
-You'll build an application that has a static home page, and also will accept HTTP GET requests at:
+== What You Will Build
 
-    http://localhost:8080/greeting
+You will build an application that has a static home page and that will also accept HTTP
+GET requests at: `http://localhost:8080/greeting`.
 
-and respond with a web page displaying HTML. The body of the HTML contains a greeting:
+It will respond with a web page that displays HTML. The body of the HTML will contain a
+greeting: "`Hello, World!`"
 
-    "Hello, World!"
+You can customize the greeting with an optional `name` parameter in the query string. The
+URL might then be `http://localhost:8080/greeting?name=User`.
 
-You can customize the greeting with an optional `name` parameter in the query string:
+The `name` parameter value overrides the default value of `World` and is reflected in the
+response by the content changing to "`Hello, User!`"
 
-    http://localhost:8080/greeting?name=User
-
-The `name` parameter value overrides the default value of "World" and is reflected in the response:
-
-    "Hello, User!"
-
-
-== What you'll need
+== What You Need
 
 :java_version: 1.8
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/prereq_editor_jdk_buildtools.adoc[]
 
-
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/how_to_complete_this_guide.adoc[]
 
+[[scratch]]
+== Starting with Spring Initializr
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/hide-show-gradle.adoc[]
+For all Spring applications, you should start with the https://start.spring.io[Spring
+Initializr]. The Initializr offers a fast way to pull in all the dependencies you need for
+an application and does a lot of the setup for you. This example needs the Spring Web and
+Thymeleaf dependencies. The following image shows the Initializr set up for this sample
+project:
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/hide-show-maven.adoc[]
+image::images/initializr.png[]
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/hide-show-sts.adoc[]
+NOTE: The preceding image shows the Initializr with Maven chosen as the build tool. You
+can also use Gradle. It also shows values of `com.example` and `serving-web-content` as
+the Group and Artifact, respectively. You will use those values throughout the rest of
+this sample.
 
+The following listing shows the `pom.xml` file that is created when you choose Maven:
 
+====
+[source,xml]
+----
+include::initial/pom.xml[]
+----
+====
+
+The following listing shows the `build.gradle` file that is created when you choose Gradle:
+
+====
+[source,text]
+----
+include::initial/build.gradle[]
+----
+====
 
 [[initial]]
-== Create a web controller
+== Create a Web Controller
 
-In Spring's approach to building web sites, HTTP requests are handled by a controller. You can easily identify these requests by the {Controller}[`@Controller`] annotation. In the following example, the GreetingController handles GET requests for /greeting by returning the name of a {View}[`View`], in this case, "greeting". A `View` is responsible for rendering the HTML content:
+In Spring's approach to building web sites, HTTP requests are handled by a controller. You
+can easily identify the controller by the {Controller}[`@Controller`] annotation. In the
+following example, `GreetingController` handles GET requests for `/greeting` by returning
+the name of a {View}[`View`] (in this case, `greeting`). A `View` is responsible for
+rendering the HTML content. The following listing (from
+`src/main/java/com/example/servingwebcontent/GreetingController.java`) shows the
+controller:
 
-`src/main/java/hello/GreetingController.java`
+====
 [source,java]
 ----
-include::complete/src/main/java/hello/GreetingController.java[]
+include::complete/src/main/java/com/example/servingwebcontent/GreetingController.java[]
 ----
+====
 
-This controller is concise and simple, but there's plenty going on. Let's break it down step by step.
+This controller is concise and simple, but there is plenty going on. We break it down step
+by step.
 
-The `@GetMapping` annotation ensures that HTTP GET requests to `/greeting` are mapped to the `greeting()` method.
+The `@GetMapping` annotation ensures that HTTP GET requests to `/greeting` are mapped to
+the `greeting()` method.
 
-{RequestParam}[`@RequestParam`] binds the value of the query String parameter `name` into the `name` parameter of the `greeting()` method. This query String parameter is not `required`; if it is absent in the request, the `defaultValue` of "World" is used. The value of the `name` parameter is added to a {Model}[`Model`] object, ultimately making it accessible to the view template.
+{RequestParam}[`@RequestParam`] binds the value of the query string parameter `name` into
+the `name` parameter of the `greeting()` method. This query string parameter is not
+`required`. If it is absent in the request, the `defaultValue` of `World` is used. The
+value of the `name` parameter is added to a {Model}[`Model`] object, ultimately making it
+accessible to the view template.
 
-The implementation of the method body relies on a link:/understanding/view-templates[view technology], in this case http://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html[Thymeleaf], to perform server-side rendering of the HTML. Thymeleaf parses the `greeting.html` template below and evaluates the `th:text` expression to render the value of the `${name}` parameter that was set in the controller.
+The implementation of the method body relies on a view technology (in this case,
+http://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html[Thymeleaf]) to perform
+server-side rendering of the HTML. Thymeleaf parses the `greeting.html` template and
+evaluates the `th:text` expression to render the value of the `${name}` parameter that was
+set in the controller.The following listing (from
+`src/main/resources/templates/greeting.html`) shows the `greeting.html` template:
 
-`src/main/resources/templates/greeting.html`
+====
 [source,html]
 ----
 include::complete/src/main/resources/templates/greeting.html[]
 ----
+====
 
-== Developing web apps
+== Spring Boot Devtools
 
-A common feature of developing web apps is coding a change, restarting your app, and refreshing the browser to view the change. This entire process can eat up a lot of time. To speed up the cycle of things, Spring Boot comes with a handy module known as http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools[spring-boot-devtools].
+A common feature of developing web applications is coding a change, restarting your
+application, and refreshing the browser to view the change. This entire process can eat up
+a lot of time. To speed up this refresh cycle, Spring Boot comes with a handy module
+known as
+http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools[spring-boot-devtools].
+Spring Boot Devtools:
 
-* Enable http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-hotswapping[hot swapping]
-* Switches template engines to disable caching
-* Enables LiveReload to refresh browser automatically
-* Other reasonable defaults based on development instead of production
+* Enables
+http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-hotswapping[hot swapping].
+* Switches template engines to disable caching.
+* Enables LiveReload to automatically refresh the browser.
+* Other reasonable defaults based on development instead of production.
 
-== Make the application executable
+== Make the Application Executable
 
-Although it is possible to package this service as a traditional link:/understanding/WAR[WAR] file for deployment to an external application server, the simpler approach demonstrated below creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the link:/understanding/Tomcat[Tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
+The Spring Initializr creates an application class for you. In this case, you need not
+further modify the class provided by the Spring Initializr. The following listing (from
+`src/main/java/com/example/servingwebcontent/ServingWebContentApplication.java`) shows the
+application class:
 
-
-`src/main/java/hello/Application.java`
+====
 [source,java]
 ----
-include::complete/src/main/java/hello/Application.java[]
+include::complete/src/main/java/com/example/servingwebcontent/ServingWebContentApplication.java[]
 ----
+====
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/spring-boot-application.adoc[]
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/spring-boot-application-new-path.adoc[]
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/build_an_executable_jar_subhead.adoc[]
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/build_an_executable_jar_with_both.adoc[]
 
+Logging output is displayed. The application should be up and running within a few seconds.
 
-Logging output is displayed. The app should be up and running within a few seconds.
+== Test the Application
 
+Now that the web site is running, visit `http://localhost:8080/greeting`, where you should
+see "`Hello, World!`"
 
-== Test the App
+Provide a `name` query string parameter by visiting
+`http://localhost:8080/greeting?name=User`. Notice how the message changes from
+"`Hello, World!`" to "`Hello, User!`":
 
-Now that the web site is running, visit http://localhost:8080/greeting, where you see:
-
-    "Hello, World!"
-
-Provide a `name` query string parameter with http://localhost:8080/greeting?name=User. Notice how the message changes from "Hello, World!" to "Hello, User!":
-
-    "Hello, User!"
-
-This change demonstrates that the {RequestParam}[`@RequestParam`] arrangement in `GreetingController` is working as expected. The `name` parameter has been given a default value of "World", but can always be explicitly overridden through the query string.
+This change demonstrates that the {RequestParam}[`@RequestParam`] arrangement in
+`GreetingController` is working as expected. The `name` parameter has been given a default
+value of `World`, but it can be explicitly overridden through the query string.
 
 == Add a Home Page
 
-Static resources, like HTML or JavaScript or CSS, can easily be served from your Spring Boot application just by dropping them into the right place in the source code. By default Spring Boot serves static content from resources in the classpath at "/static" (or "/public"). The `index.html` resource is special because it is used as a "welcome page" if it exists, which means it will be served up as the root resource, i.e. at `http://localhost:8080/` in our example. So create this file:
+Static resources, including HTML and JavaScript and CSS, can be served from your Spring
+Boot application by dropping them into the right place in the source code. By default,
+Spring Boot serves static content from resources in the classpath at `/static` (or
+`/public`). The `index.html` resource is special because, if it exists, it is used as a
+"`welcome page,`"serving-web-content/ which means it is served up as the root resource (that is, at
+`http://localhost:8080/`). As a result, you need to create the following file (which you
+can find in `src/main/resources/static/index.html`):
 
-`src/main/resources/static/index.html`
+====
 [source,html]
 ----
 include::complete/src/main/resources/static/index.html[]
 ----
+====
 
-and when you restart the app you will see the HTML at http://localhost:8080/.
+When you restart the application, you will see the HTML at `http://localhost:8080/`.
 
 == Summary
 
-Congratulations! You have just developed a web page using Spring.
+Congratulations! You have just developed a web page by using Spring.
 
 == See Also
 
