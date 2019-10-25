@@ -42,9 +42,9 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 
 For all Spring applications, you should start with the https://start.spring.io[Spring
 Initializr]. The Initializr offers a fast way to pull in all the dependencies you need for
-an application and does a lot of the setup for you. This example needs the Spring Web and
-Thymeleaf dependencies. The following image shows the Initializr set up for this sample
-project:
+an application and does a lot of the setup for you. This example needs the Spring Web,
+Thymeleaf, and Spring Boot DevTools dependencies. The following image shows the Initializr
+set up for this sample project:
 
 image::images/initializr.png[]
 
@@ -119,7 +119,7 @@ include::complete/src/main/resources/templates/greeting.html[]
 
 A common feature of developing web applications is coding a change, restarting your
 application, and refreshing the browser to view the change. This entire process can eat up
-a lot of time. To speed up this refresh cycle, Spring Boot comes with a handy module
+a lot of time. To speed up this refresh cycle, Spring Boot offers with a handy module
 known as
 http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools[spring-boot-devtools].
 Spring Boot Devtools:
@@ -130,7 +130,7 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-hotsw
 * Enables LiveReload to automatically refresh the browser.
 * Other reasonable defaults based on development instead of production.
 
-== Make the Application Executable
+== Run the Application
 
 The Spring Initializr creates an application class for you. In this case, you need not
 further modify the class provided by the Spring Initializr. The following listing (from
