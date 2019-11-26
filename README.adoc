@@ -56,7 +56,7 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 In Spring's approach to building web sites, HTTP requests are handled by a controller. You can easily identify these requests by the {Controller}[`@Controller`] annotation. In the following example, the GreetingController handles GET requests for /greeting by returning the name of a {View}[`View`], in this case, "greeting". A `View` is responsible for rendering the HTML content:
 
 `src/main/java/hello/GreetingController.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/src/main/java/hello/GreetingController.java[]
 ----
@@ -90,7 +90,7 @@ Although it is possible to package this service as a traditional link:/understan
 
 
 `src/main/java/hello/Application.java`
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/src/main/java/hello/Application.java[]
 ----
