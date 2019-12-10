@@ -75,6 +75,8 @@ The implementation of the method body relies on a link:/understanding/view-templ
 include::complete/src/main/resources/templates/greeting.html[]
 ----
 
+TIP: Make sure you have Thymeleaf on your classpath (artifact co-ordinates: `org.springframework.boot:spring-boot-starter-thymeleaf`). It is already there in the "initial" and "complete" samples in Github.
+
 == Developing web apps
 
 A common feature of developing web apps is coding a change, restarting your app, and refreshing the browser to view the change. This entire process can eat up a lot of time. To speed up the cycle of things, Spring Boot comes with a handy module known as http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools[spring-boot-devtools].
