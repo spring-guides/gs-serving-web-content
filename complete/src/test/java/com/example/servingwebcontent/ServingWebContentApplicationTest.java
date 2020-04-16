@@ -27,7 +27,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(controllers = GreetingController.class)
-public class ServingnWebContentApplicationTest {
+public class ServingWebContentApplicationTest {
 
 	@Autowired
 	private MockMvc mockMvc;
