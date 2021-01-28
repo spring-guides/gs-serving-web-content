@@ -1,5 +1,5 @@
 :spring_version: current
-:spring_boot_version: 2.3.2.RELEASE
+:spring_boot_version: 2.4.2
 :Component: http://docs.spring.io/spring/docs/{spring_version}/javadoc-api/org/springframework/stereotype/Component.html
 :Controller: http://docs.spring.io/spring/docs/{spring_version}/javadoc-api/org/springframework/stereotype/Controller.html
 :DispatcherServlet: http://docs.spring.io/spring/docs/{spring_version}/javadoc-api/org/springframework/web/servlet/DispatcherServlet.html
@@ -43,8 +43,9 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 For all Spring applications, you should start with the https://start.spring.io[Spring
 Initializr]. The Initializr offers a fast way to pull in all the dependencies you need for
 an application and does a lot of the setup for you. This example needs the Spring Web,
-Thymeleaf, and Spring Boot DevTools dependencies. 
+Thymeleaf, and Spring Boot DevTools dependencies.
 
+You can get a Maven build file with the necessary dependencies directly from the https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.4.2.RELEASE&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=serving-web-content&name=serving-web-content&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.serving-web-content&dependencies=web,thymeleaf,devtools[Spring Initializr].
 The following listing shows the `pom.xml` file that is created when you choose Maven:
 
 ====
@@ -54,6 +55,7 @@ include::initial/pom.xml[]
 ----
 ====
 
+You can get a Gradle build file with the necessary dependencies directly from the https://start.spring.io/#!type=gradle-project&language=java&platformVersion=2.4.2.RELEASE&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=serving-web-content&name=serving-web-content&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.serving-web-content&dependencies=web,thymeleaf,devtools[Spring Initializr].
 The following listing shows the `build.gradle` file that is created when you choose Gradle:
 
 ====
