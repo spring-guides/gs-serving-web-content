@@ -157,7 +157,7 @@ Static resources, including HTML and JavaScript and CSS, can be served from your
 Boot application by dropping them into the right place in the source code. By default,
 Spring Boot serves static content from resources in the classpath at `/static` (or
 `/public`). The `index.html` resource is special because, if it exists, it is used as a
-"`welcome page,`"serving-web-content/ which means it is served up as the root resource (that is, at
+"welcome page", which means it is served up as the root resource (that is, at
 `http://localhost:8080/`). As a result, you need to create the following file (which you
 can find in `src/main/resources/static/index.html`):
 
