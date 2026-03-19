@@ -8,8 +8,7 @@
 :source-highlighter: prettify
 :project_id: gs-serving-web-content
 
-This guide walks you through the process of creating a "`Hello, World`" web site with
-Spring.
+This guide walks you through the process of creating a "`Hello, World`" website with Spring.
 
 == What You Will Build
 
@@ -41,32 +40,34 @@ To manually initialize the project:
 
 . Navigate to https://start.spring.io.
 This service pulls in all the dependencies you need for an application and does most of the setup for you.
-. Choose either Gradle or Maven and the language you want to use. This guide assumes that you chose Java.
+. Choose either Gradle or Maven and the language you want to use.
 . Click *Dependencies* and select *Spring Web*, *Thymeleaf*, and *Spring Boot DevTools*.
 . Click *Generate*.
 . Download the resulting ZIP file, which is an archive of a web application that is configured with your choices.
 
 NOTE: If your IDE has the Spring Initializr integration, you can complete this process from your IDE.
 
-NOTE: You can also fork the project from Github and open it in your IDE or other editor.
+NOTE: You can also fork the project from GitHub and open it in your IDE or other editor.
 
 [[initial]]
 == Create a Web Controller
 
-In Spring's approach to building web sites, HTTP requests are handled by a controller. You
+In Spring's approach to building websites, HTTP requests are handled by a controller. You
 can easily identify the controller by the {Controller}[`@Controller`] annotation. In the
 following example, `GreetingController` handles GET requests for `/greeting` by returning
 the name of a {View}[`View`] (in this case, `greeting`). A `View` is responsible for
-rendering the HTML content. The following listing (from
-`src/main/java/com/example/servingwebcontent/GreetingController.java`) shows the
-controller:
+rendering the HTML content. The following listing shows the controller:
 
-====
-[source,java]
+[source,java,indent=0,subs="verbatim,quotes",role="primary"]
+.Java
 ----
 include::complete/src/main/java/com/example/servingwebcontent/GreetingController.java[]
 ----
-====
+[source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
+.Kotlin
+----
+include::complete-kotlin/src/main/kotlin/com/example/servingwebcontent/GreetingController.kt[]
+----
 
 This controller is concise and simple, but there is plenty going on. We break it down step
 by step.
@@ -94,7 +95,7 @@ include::complete/src/main/resources/templates/greeting.html[]
 ----
 ====
 
-TIP: Make sure you have Thymeleaf on your classpath (artifact co-ordinates: `org.springframework.boot:spring-boot-starter-thymeleaf`). It is already there in the "initial" and "complete" samples in Github.
+TIP: Make sure you have Thymeleaf on your classpath (artifact co-ordinates: `org.springframework.boot:spring-boot-starter-thymeleaf`). It is already there in the "initial", "complete", "initial-kotlin", and "complete-kotlin" samples in GitHub.
 
 == Spring Boot Devtools
 
@@ -114,16 +115,19 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-hotsw
 == Run the Application
 
 The Spring Initializr creates an application class for you. In this case, you need not
-further modify the class provided by the Spring Initializr. The following listing (from
-`src/main/java/com/example/servingwebcontent/ServingWebContentApplication.java`) shows the
+further modify the class provided by the Spring Initializr. The following listing shows the
 application class:
 
-====
-[source,java]
+[source,java,indent=0,subs="verbatim,quotes",role="primary"]
+.Java
 ----
 include::complete/src/main/java/com/example/servingwebcontent/ServingWebContentApplication.java[]
 ----
-====
+[source,kotlin,indent=0,subs="verbatim,quotes",role="secondary"]
+.Kotlin
+----
+include::complete-kotlin/src/main/kotlin/com/example/servingwebcontent/ServingWebContentApplication.kt[]
+----
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/spring-boot-application-new-path.adoc[]
 
@@ -135,7 +139,7 @@ Logging output is displayed. The application should be up and running within a f
 
 == Test the Application
 
-Now that the web site is running, visit `http://localhost:8080/greeting`, where you should
+Now that the website is running, visit `http://localhost:8080/greeting`, where you should
 see "`Hello, World!`"
 
 Provide a `name` query string parameter by visiting
@@ -143,7 +147,7 @@ Provide a `name` query string parameter by visiting
 "`Hello, World!`" to "`Hello, User!`":
 
 This change demonstrates that the {RequestParam}[`@RequestParam`] arrangement in
-`GreetingController` is working as expected. The `name` parameter has been given a default
+the controller is working as expected. The `name` parameter has been given a default
 value of `World`, but it can be explicitly overridden through the query string.
 
 == Add a Home Page
