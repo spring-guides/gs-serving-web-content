@@ -100,7 +100,7 @@ TIP: Make sure you have Thymeleaf on your classpath (artifact co-ordinates: `org
 
 A common feature of developing web applications is coding a change, restarting your
 application, and refreshing the browser to view the change. This entire process can eat up
-a lot of time. To speed up this refresh cycle, Spring Boot offers with a handy module
+a lot of time. To speed up this refresh cycle, Spring Boot offers a handy module
 known as
 http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools[spring-boot-devtools].
 Spring Boot Devtools:
