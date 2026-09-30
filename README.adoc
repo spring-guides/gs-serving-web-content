@@ -85,7 +85,7 @@ The implementation of the method body relies on a view technology (in this case,
 http://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html[Thymeleaf]) to perform
 server-side rendering of the HTML. Thymeleaf parses the `greeting.html` template and
 evaluates the `th:text` expression to render the value of the `${name}` parameter that was
-set in the controller.The following listing (from
+set in the controller. The following listing (from
 `src/main/resources/templates/greeting.html`) shows the `greeting.html` template:
 
 ====

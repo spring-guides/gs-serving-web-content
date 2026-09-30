@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class ServingWebContentApplication
 
 fun main(args: Array<String>) {
-	runApplication<ServingWebContentApplication>(*args)
+    runApplication<ServingWebContentApplication>(*args)
 }
